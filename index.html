@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Selector</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:#0e0e0e ;
+        }
+
+        .container {
+            text-align: center;
+            -webkit-text-fill-color:#139ea2;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            -webkit-text-fill-color: white
+        }
+
+        .slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            background: #ddd;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: yellow;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WHAT'S YOUR GENDER</h1>
+        <break/><break/><break/><break/>
+        <div class="slider-container">
+            <div class="labels">
+                <span>Male</span>
+                <span>Female</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="genderSlider">
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('genderSlider');
+        slider.addEventListener('input', function() {
+            // This function can be used to update any action based on slider value
+           console.log(`You are ${slider.value}% Female & ${100-slider.value}% Male`);
+        });
+    </script>
+</body>
+</html>
+
